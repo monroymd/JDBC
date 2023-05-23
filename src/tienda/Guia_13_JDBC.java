@@ -1,7 +1,7 @@
 
 package tienda;
 
-import tienda.persistencia.ProductoDAO;
+import tienda.servicios.ProductoService;
 
 
 public class Guia_13_JDBC {
@@ -9,9 +9,10 @@ public class Guia_13_JDBC {
     
     public static void main(String[] args) throws Exception {
         
-        ProductoDAO ds = new ProductoDAO();
-        
-        ds.consultarBase("SELECT * FROM producto");
+        ProductoService nuevo = new ProductoService();
+        nuevo.listarProducto();
+        System.out.println("-------------");
+        nuevo.listarPorNombreYPrecio();
     }
     
 }
